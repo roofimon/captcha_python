@@ -1,7 +1,7 @@
 import unittest
 
 class Captcha(object):
-    def __init__(self, patter, left, operator, right):
+    def __init__(self, pattern, left, operator, right):
         self.left = left
         self.right = right
 
