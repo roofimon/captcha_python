@@ -6,7 +6,6 @@ SECOND_PATTERN = 2
 DUMMY_RIGHT = 1
 DUMMY_OPERATOR = 1
 
-
 class FirstPatternLeftOperandShouldBeText(unittest.TestCase):
     def test_leftoperand_should_be_one(self):
         captcha = Captcha(FIRST_PATTERN, 1, DUMMY_OPERATOR, DUMMY_RIGHT)

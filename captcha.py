@@ -1,9 +1,17 @@
 class Captcha(object):
     number_text = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
     def __init__(self, pattern, left, operator, right):
+        self.operator = operator
         self.pattern = pattern
         self.left = left
         self.right = right
+    
+    def oper(self):
+        if self.operator == 1: 
+            return "+"
+        elif self.operator == 2:
+            return "*"
+        return "-"
 
     def right_operand(self):
         if self.pattern == 2:
