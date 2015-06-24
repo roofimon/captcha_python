@@ -5,6 +5,14 @@ FIRST_PATTERN = 1
 DUMMY_LEFT = 1
 DUMMY_RIGHT = 1
 DUMMY_OPERATOR = 1
+class FirstPattern(unittest.TestCase):
+    def test_string_should_be_one_plus_1(self):
+        captcha = Captcha(1, 1, 1, 1)
+        self.assertEqual("one + 1", captcha.string())
+    def test_string_should_be_one_plus_9(self):
+        captcha = Captcha(1, 1, 1, 9)
+        self.assertEqual("one + 9", captcha.string())
+
 class FirstPatternLeftOperandShouldBeString(unittest.TestCase):
     def test_left_operand_should_be_one(self):
         captcha = Captcha(FIRST_PATTERN, 1, DUMMY_OPERATOR, DUMMY_RIGHT)
