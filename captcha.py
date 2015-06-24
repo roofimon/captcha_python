@@ -15,9 +15,14 @@ class Captcha(object):
         return self.operation_text[self.operator - 1]
 
     def right_operand(self):
-        if self.pattern == 2:
-            return self.number_text[self.right - 1]
-        return str(self.right)
+        if self.is_number_operation_string_pattern():
+            right = self.number_text[self.right - 1]
+        else:
+            right = str(self.right)
+        return right
+
+    def is_number_operation_string_pattern(self):
+        return self.pattern == 2
 
     def left_operand(self):
         if self.pattern == 1:

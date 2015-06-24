@@ -7,13 +7,16 @@ DUMMY_RIGHT = 1
 DUMMY_LEFT = 1
 DUMMY_OPERATOR = 1
 
+
 class SecondPattern(unittest.TestCase):
     def test_string_should_be_1_plus_one(self):
         captcha = Captcha(2, 1, 1, 1)
         self.assertEqual("1 + one", captcha.string())
+
     def test_string_should_be_9_plus_one(self):
         captcha = Captcha(2, 9, 1, 1)
         self.assertEqual("9 + one", captcha.string())
+
 
 class SecondPatternLeftOperandShouldBeNumber(unittest.TestCase):
     def test_left_operand_should_be_1(self):
@@ -23,6 +26,7 @@ class SecondPatternLeftOperandShouldBeNumber(unittest.TestCase):
     def test_left_operand_should_be_9(self):
         captcha = Captcha(SECOND_PATTERN, 9, DUMMY_OPERATOR, DUMMY_RIGHT)
         self.assertEqual("9", captcha.left_operand())
+
 
 class SecondPatternRightOperandShouldBeString(unittest.TestCase):
     def test_right_operand_should_be_one(self):
